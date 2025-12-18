@@ -18,7 +18,11 @@ class MLP(nn.Module):
             nn.Sigmoid()
         )
 
-    def forward(self, x):
+    def forward(self, *xs):
+        if len(xs) == 1:
+            x = xs[0]
+        else:
+            x = torch.cat(xs, dim=-1)
         return self.net(x)
 
 
@@ -42,7 +46,6 @@ InBetween = ltn.Predicate(MLP(input_dim=33))
 # ============================================================
 
 if __name__ == "__main__":
-    # exemplo ficticio apenas para checar dimensoes
     x = torch.rand(10, 22)
     y = torch.rand(10, 33)
 
