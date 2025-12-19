@@ -10,9 +10,9 @@ class MLP(nn.Module):
     def __init__(self, input_dim):
         super().__init__()
         self.net = nn.Sequential(
-            nn.Linear(input_dim, 32),
+            nn.Linear(input_dim, 32), 
             nn.ReLU(),
-            nn.Linear(32, 16),
+            nn.Linear(32, 16), 
             nn.ReLU(),
             nn.Linear(16, 1),
             nn.Sigmoid()
@@ -25,29 +25,33 @@ class MLP(nn.Module):
             x = torch.cat(xs, dim=-1)
         return self.net(x)
 
-
 # ============================================================
-# 2. DEFINICAO DOS PREDICADOS LTN
+# 2. PREDICADOS
 # ============================================================
 
+# Predicados unários: entrada = um objeto concatenado (11)
 # Predicados binarios: entrada = dois objetos concatenados (22)
-LeftOf = ltn.Predicate(MLP(input_dim=22))
-RightOf = ltn.Predicate(MLP(input_dim=22))
-CloseTo = ltn.Predicate(MLP(input_dim=22))
-Above = ltn.Predicate(MLP(input_dim=22))
-Below = ltn.Predicate(MLP(input_dim=22))
 
-# Predicado ternario: entrada = tres objetos concatenados (33)
-InBetween = ltn.Predicate(MLP(input_dim=33))
+# Tarefa 1: Taxonomia e Formas
+isCylinder = ltn.Predicate(MLP(input_dim=11))
+isCone = ltn.Predicate(MLP(input_dim=11))
+isTriangle = ltn.Predicate(MLP(input_dim=11))
+isCircle = ltn.Predicate(MLP(input_dim=11))
+isSquare = ltn.Predicate(MLP(input_dim=11))
+isSmall = ltn.Predicate(MLP(input_dim=11))
+isBig = ltn.Predicate(MLP(input_dim=11))
 
+# Tarefa 2: Raciocínio Espacial
+leftOf = ltn.Predicate(MLP(input_dim=22))
+rightOf = ltn.Predicate(MLP(input_dim=22))
+closeTo = ltn.Predicate(MLP(input_dim=22))
 
-# ============================================================
-# 3. EXEMPLO DE USO COM DATASET
-# ============================================================
+# Tarefa 3: Raciocínio Vertical
+above = ltn.Predicate(MLP(input_dim=22))
+below = ltn.Predicate(MLP(input_dim=22))
 
-if __name__ == "__main__":
-    x = torch.rand(10, 22)
-    y = torch.rand(10, 33)
+# Tarefa 4: Raciocínio Composto
 
-    print("LeftOf:", LeftOf(x))
-    print("InBetween:", InBetween(y))
+isRed = ltn.Predicate(MLP(input_dim=11))
+isGreen = ltn.Predicate(MLP(input_dim=11))
+isBlue = ltn.Predicate(MLP(input_dim=11))
