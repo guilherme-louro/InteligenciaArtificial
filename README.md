@@ -22,7 +22,21 @@
 
 ## Passo a passo de como rodar
 
-1. Crie um ambiente virtual python com as versões da biblioteca que utilizamos. Isso pode ser crucial pra que o código rode de maneira correta na sua máquina. Pode renomear a venv com outro
+Nós tivemos muito problema com as dependências de biblioteca que rodem para um ou outro da equipe (você deve saber que python é uma linguagem terrível quando se fala em dependências de biblioteca). Por isso, deixamos duas formas de baixar as dependências. A primeira usando  `conda` que recomendamos mais por usar uma versão python `3.10`, e a segunda usando o `venv` que pode ser mais difícil de rodar por depender da versão do python instalada na máquina.
+
+### Usando `conda`
+
+1. Se já tiver o conda instalado, basta criar o ambiente:
+```bash
+conda env create -f ./environments.yml
+```
+
+2. Use o interpretador python do ambiente conda que criamos chamado de `ltn_env` no notebook `experiments.ipynb`
+
+
+## Usando `venv`
+
+1. Crie um ambiente virtual python com as versões da biblioteca que utilizamos. Pode renomear a venv com outro nome:
 ```bash
 python -m venv myvenv
 ```
@@ -37,4 +51,4 @@ source/myenv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Após isso, você pode executar nosso trabalho no notebook `experiments.ipynb`
+4. Após isso, você pode executar nosso trabalho no notebook `experiments.ipynb` usando o interpretador python do `myenv`
