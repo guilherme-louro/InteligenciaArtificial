@@ -19,6 +19,7 @@
 - `queries.py`: Define duas consultas da parte "Tarefa 4: Raciocínio Composto" da especificação, junto de suas funções ground truth.
 - `trainer.py`: Implementa a função que faz o treinamento do LTN.
 - `experiments.ipynb`: Faz a execução do trabalho. Treina o modelo com o dataset feito a mão em sala e testa com 5 datasets aleatórios.
+- `entrega_4_resultados.md`: Documento consolidado com todos os resultados das 5 execuções experimentais, métricas de performance, análise de satisfação dos axiomas e conclusões detalhadas para a Entrega 4.
 
 ## Algumas definições importantes: 
 
