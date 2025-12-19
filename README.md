@@ -61,12 +61,12 @@ conda env create -f ./environments.yml
 
 1. Crie um ambiente virtual python com as versões da biblioteca que utilizamos. Pode renomear a venv com outro nome:
 ```bash
-python -m venv myvenv
+python -m venv myenv
 ```
 
 2. Ative o ambiente virtual:
 ```bash
-source/myenv/bin/activate
+source myenv/bin/activate
 ```
 
 3. Se apareceu algo como `(myenv)` no seu terminal, está ativo. Agora instale as bibliotecas para o ambiente virtual:
