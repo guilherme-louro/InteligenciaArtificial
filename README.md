@@ -12,7 +12,13 @@
 
 ## Descrição sobre o repositório
 
-- `predicates.py`: Define  ...
+- `predicates.py`: Define os predicados na especificação. Ele também tem a classe de MLP que cria as redes neurais. Eles possuem uma camada oculta de 32 neurônios, uma camada oculta de 16 neurônios e uma camada de saída com 1 neurônio.
+- `axioms.py`: Define os axiomas na especificação.
+- `metrics.py`: Implementa as métricas exigidas (acurácia, precisão, recall e f1) no trabalho).
+- `data_generation.py`: Código que implementa a função de criar um dataset aleatório. Ele também possui algumas perguntas ground truth de predicados e possui funções de preparação para avaliação dos predicados.
+- `queries.py`: Define duas consultas da parte "Tarefa 4: Raciocínio Composto" da especificação, junto de suas funções ground truth.
+- `trainer.py`: Implementa a função que faz o treinamento do LTN.
+- `experiments.ipynb`: Faz a execução do trabalho. Treina o modelo com o dataset feito a mão em sala e testa com 5 datasets aleatórios.
 
 ## Passo a passo de como rodar
 
