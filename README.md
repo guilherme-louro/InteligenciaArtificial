@@ -20,6 +20,29 @@
 - `trainer.py`: Implementa a função que faz o treinamento do LTN.
 - `experiments.ipynb`: Faz a execução do trabalho. Treina o modelo com o dataset feito a mão em sala e testa com 5 datasets aleatórios.
 
+## Algumas definições importantes: 
+
+### Inteligência Artificial Neuro-Simbólica (NeSy)
+
+A Inteligência Artificial Neuro-Simbólica busca integrar duas vertentes tradicionais da IA:
+* **Abordagens neurais**, responsáveis por aprender padrões a partir de dados, geralmente de forma contínua e diferenciável;
+* **Abordagens simbólicas**, baseadas em lógica e regras explícitas, capazes de representar conhecimento estruturado e realizar inferências.
+
+Essa integração permite superar limitações de cada abordagem isoladamente, combinando a capacidade de aprendizado das redes neurais com a precisão e interpretabilidade do raciocínio lógico.
+
+### 3. Logic Tensor Networks (LTN)
+
+As **Logic Tensor Networks** estendem a lógica de primeira ordem para o domínio contínuo, permitindo que predicados lógicos sejam representados como funções diferenciáveis. Dessa forma, fórmulas lógicas deixam de ser avaliadas apenas como verdadeiras ou falsas e passam a assumir valores de verdade contínuos no intervalo ([0,1]).
+
+Em LTN:
+
+* **Predicados** são implementados como redes neurais;
+* **Constantes** representam objetos do domínio;
+* **Fórmulas lógicas** são traduzidas em expressões diferenciáveis;
+* O grau de satisfação de uma fórmula indica o quanto ela é respeitada pelo modelo.
+
+O treinamento consiste em maximizar a **satisfatibilidade global** das fórmulas definidas na base de conhecimento.
+
 ## Passo a passo de como rodar
 
 Nós tivemos muito problema com as dependências de biblioteca que rodem para um ou outro da equipe (você deve saber que python é uma linguagem terrível quando se fala em dependências de biblioteca). Por isso, deixamos duas formas de baixar as dependências. A primeira usando  `conda` que recomendamos mais por usar uma versão python `3.10`, e a segunda usando o `venv` que pode ser mais difícil de rodar por depender da versão do python instalada na máquina.
